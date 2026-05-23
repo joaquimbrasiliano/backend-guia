@@ -18,5 +18,8 @@ if [ ! -f ".env" ]; then
   echo "Arquivo .env criado a partir de .env.example — adicione sua GEMINI_API_KEY"
 fi
 
-echo "Iniciando servidor em http://localhost:8000"
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+HOST=${HOST:-0.0.0.0}
+PORT=${PORT:-8000}
+
+echo "Iniciando servidor em http://$HOST:$PORT"
+uvicorn app.main:app --host "$HOST" --port "$PORT"
