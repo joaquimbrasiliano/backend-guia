@@ -150,7 +150,7 @@ def _dict_to_guia(data: dict) -> GuiaSADT:
 
 def extract_via_gemini(file_bytes: bytes, content_type: str) -> GuiaSADT:
     genai.configure(api_key=settings.gemini_api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-3.5-flash")
 
     if content_type == "application/pdf":
         image_bytes = _pdf_first_page_as_image(file_bytes)
