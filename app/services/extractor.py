@@ -32,7 +32,7 @@ def extract(file_bytes: bytes, content_type: str) -> GuiaSADT:
         # Sem chave Gemini, usa somente extratores locais
         use_gemini = False
     else:
-        use_gemini = True # Default eh true
+        use_gemini = False # Default eh true
 
     # 1. Tenta extração local
     if content_type == "application/pdf" and is_structured_pdf(file_bytes):
